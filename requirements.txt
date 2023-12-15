@@ -1,0 +1,9 @@
+# easyocr
+azure-ai-formrecognizer
+azure-cognitiveservices-speech
+azure-ai-vision 
+langchain
+azure-ai-textanalytics
+openai
+streamlit
+python-dotenv

@@ -46,6 +46,9 @@ def display_home():
 
 def display_chat_bot():
     """ Menampilkan halaman Chat Bot. """
+    
+    image_url = st.session_state['image_url']
+    
     if st.sidebar.button("Refresh"):
         st.session_state['on_home_page'] = True
         st.session_state['image_url'] = ''
@@ -57,7 +60,7 @@ def display_chat_bot():
 
     user_question = st.text_input("Tanyakan sesuatu tentang gambar:")
     if st.button("Tanya"):
-        response = agent.run(f'"{user_question}" "{st.session_state["image_url"]}"')
+        response = agent.run(f'"{user_question}" "{image_url}"')
         st.write(response)
 
 def initialize_chatbot():

@@ -8,12 +8,17 @@ from langchain.agents.agent_toolkits import AzureCognitiveServicesToolkit
 from langchain.llms import AzureOpenAI
 from langchain.agents import initialize_agent, AgentType
 
-load_dotenv()
-AZURE_COGS_KEY = os.getenv("AZURE_COGS_KEY")
-AZURE_COGS_ENDPOINT = os.getenv("AZURE_COGS_ENDPOINT")
-AZURE_COGS_REGION = os.getenv("AZURE_COGS_REGION")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_ENDPOINT = os.getenv("OPENAI_ENDPOINT")
+# load_dotenv()
+# AZURE_COGS_KEY = os.getenv("AZURE_COGS_KEY")
+# AZURE_COGS_ENDPOINT = os.getenv("AZURE_COGS_ENDPOINT")
+# AZURE_COGS_REGION = os.getenv("AZURE_COGS_REGION")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# OPENAI_ENDPOINT = os.getenv("OPENAI_ENDPOINT")
+
+AZURE_COGS_KEY = st.secrets["AZURE_COGS_KEY"]
+AZURE_COGS_ENDPOINT = st.secrets["AZURE_COGS_ENDPOINT"]
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+OPENAI_ENDPOINT = st.secrets["OPENAI_ENDPOINT"]
 
 os.environ["AZURE_COGS_KEY"] = AZURE_COGS_KEY
 os.environ["AZURE_COGS_ENDPOINT"] = AZURE_COGS_ENDPOINT 
